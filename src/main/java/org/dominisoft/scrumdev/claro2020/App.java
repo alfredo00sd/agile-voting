@@ -71,7 +71,11 @@ public final class App {
     app.get("", ctx -> {
       ctx.redirect("/index.html");
     });
-
+     
+    app.get("/voting.html", ctx -> {
+      ctx.render("voting.pebble");
+    });
+    
     app.get("/index.html", ctx -> {
       ctx.render("index.pebble");
     });
