@@ -8,6 +8,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 public class CandidateLoader {
@@ -34,7 +35,7 @@ public class CandidateLoader {
 
     try {
 
-      File file = new File(getClass().getClassLoader().getResource(this.filePath).getFile());
+      File file = new File(Objects.requireNonNull(getClass().getClassLoader().getResource(this.filePath)).getFile());
       InputStream inputFS = new FileInputStream(file);
       BufferedReader br = new BufferedReader(new InputStreamReader(inputFS));
       String line = br.readLine();

@@ -4,12 +4,13 @@ public class Cedula {
 
     private String cedula;
 
-    public Cedula(){
+    public Cedula() {
     }
 
-    public Cedula(String cedula){
+    public Cedula(String cedula) {
         this.cedula = cedula;
     }
+
     public String getCedula() {
         return cedula;
     }
@@ -17,30 +18,31 @@ public class Cedula {
     public void setCedula(String cedula) {
         this.cedula = cedula;
     }
-    public boolean validateLength(){
+
+    public boolean validateLength() {
         return cedula.length() == 11;
     }
-    public boolean validateCedula(){
+
+    public boolean validateCedula() {
 
         int suma = 0;
         String cedula = getCedula();
 
-        final char[] peso = { '1', '2', '1', '2', '1', '2', '1', '2', '1', '2' };
+        final char[] peso = {'1', '2', '1', '2', '1', '2', '1', '2', '1', '2'};
 
         // Comprobaciones iniciales
-        if ((cedula == null) || (cedula.length() != 11)){
+        if ((cedula == null) || (cedula.length() != 11)) {
             return false;
         }
 
         // Si no es un nº => la descartamos
-        try{
+        try {
             Long.parseLong(cedula);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
 
-        for (int i = 0; i < 10; i++){
+        for (int i = 0; i < 10; i++) {
 
             int a = Character.getNumericValue(cedula.charAt(i));
 
@@ -48,11 +50,10 @@ public class Cedula {
 
             char[] mult = Integer.toString(a * b).toCharArray();
 
-            if (mult.length > 1){
+            if (mult.length > 1) {
                 a = Character.getNumericValue(mult[0]);
                 b = Character.getNumericValue(mult[1]);
-            }
-            else{
+            } else {
                 a = 0;
                 b = Character.getNumericValue(mult[0]);
             }
@@ -62,7 +63,7 @@ public class Cedula {
         int digito = (10 - (suma % 10)) % 10;
 
         // Comprobamos que el dígito de control coincide
-        if (digito != Character.getNumericValue(cedula.charAt(10))){
+        if (digito != Character.getNumericValue(cedula.charAt(10))) {
             return false;
         }
         return true;
