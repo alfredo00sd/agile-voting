@@ -82,8 +82,8 @@ public final class App {
     });
     
     app.post("/init-voting", ctx -> {
-      //ctx.contentType("text/html; charset=UTF-8");
-      //final String rawCedula = ctx.req.getParameter("id");
+      ctx.contentType("text/html; charset=UTF-8");
+      final String rawCedula = ctx.req.getParameter("id");
 
       // DopNationalIdentificationNumber cedula2 = new
       // DopNationalIdentificationNumber(rawCedula);

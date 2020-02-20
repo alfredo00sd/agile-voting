@@ -22,10 +22,12 @@
   <form action="/init-voting" method="POST">
   	<label id="id-label" for="id-input">Enter your ID: </label>
   	<input id="id-input" name="id" type="text" />
-  	<input id="vote-button" name="form-action" type="submit" value="Vote" />
+  	<input id="vote-button" name="form-action" type="submit" value="Vote"/>
   	{% if HasErrors %}
     	<span id="id-error-container" style="display:block; color:red">{{ InvalidIdMessage }}</span>
 	{% endif %}
   </form>
+
+  <script type='document/javascript' >
 </body>
 </html>
