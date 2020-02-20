@@ -10,6 +10,8 @@ import io.javalin.plugin.rendering.template.JavalinPebble;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.dominisoft.scrumdev.claro2020.domain.CandidateLoader;
+
 /**
  * Hello world.
  */
@@ -20,6 +22,7 @@ public final class App {
   public static final int DEFAULT_PORT = 7000;
 
   private static Javalin app;
+ 
 
   /**
    * Prevent instantiation.
@@ -73,6 +76,9 @@ public final class App {
     });
      
     app.get("/voting.html", ctx -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      CandidateLoader loader = new CandidateLoader("candidates.csv");
+      model.put("candidates", loader.getCandidates());
       ctx.render("voting.pebble");
     });
     
@@ -94,6 +100,10 @@ public final class App {
       model.put("InvalidIdMessage", "You have an invalid Cedula!");
       ctx.render("index.pebble", model);
     });
+    
+//    app.post("/vote", ctx -> {
+//      
+//    });
   }
 
   /**

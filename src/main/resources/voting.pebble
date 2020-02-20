@@ -19,11 +19,8 @@
 <body>
   <!-- script src="js/scripts.js"></script -->
   <h1>Select Candidate</h1>
-  <form action="/init-voting" method="POST">
-  <input type="radio" id="male" name="candidate" value="Luis Abinader">
-  <label for="male">Luis Abinader</label><br>
-  <input type="radio" id="female" name="candidate" value="Leonel Fernandez">
-  <label for="female">Leonel Fernandez</label><br>
+  <form action="/vote" method="POST">
+  
   <input type="radio" id="other" name="candidate" value="Gonzalo Castillo">
   <label for="other">Gonzalo Castillo</label>
 

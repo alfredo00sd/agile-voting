@@ -36,7 +36,8 @@ public class CandidateLoader {
 
     try {
 
-      File file = new File(Objects.requireNonNull(getClass().getClassLoader().getResource(this.filePath)).getFile());
+      File file = new File("target/test-classes/" + this.filePath);
+      System.out.println(file.getAbsolutePath());
       InputStream inputFS = new FileInputStream(file);
       BufferedReader br = new BufferedReader(new InputStreamReader(inputFS));
       String line = br.readLine();
