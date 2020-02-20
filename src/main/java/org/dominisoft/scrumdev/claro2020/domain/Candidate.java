@@ -5,10 +5,12 @@ public class Candidate {
   private String nickName;
   private String partic;
 
-  /** This method creates a candidate.
-   * @param name name
+  /**
+   * This method creates a candidate.
+   * 
+   * @param name     name
    * @param nickName nickname
-   * @param partic partic
+   * @param partic   partic
    */
   public Candidate(String name, String nickName, String partic) {
     this.name = name;

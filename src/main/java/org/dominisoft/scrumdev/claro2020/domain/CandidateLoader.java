@@ -10,11 +10,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-
 public class CandidateLoader {
   String filePath;
 
-  /** This method creates a candidate loader.
+  /**
+   * This method creates a candidate loader.
+   * 
    * @param filePath filePath
    */
   public CandidateLoader(String filePath) {
