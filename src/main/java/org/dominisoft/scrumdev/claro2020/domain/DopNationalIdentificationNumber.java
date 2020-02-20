@@ -8,7 +8,8 @@ public final class DopNationalIdentificationNumber {
   private final String value;
 
   /**
-   * Validates the given value ensuring only valid data can be used to create instances of this class.
+   * Validates the given value ensuring only valid data can be used to create
+   * instances of this class.
    * 
    * @param nin National Identification Number
    */

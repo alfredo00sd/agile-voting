@@ -1,0 +1,31 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Agile Voting</title>
+  <meta name="description" content="Agile Voting System">
+  <meta name="author" content="Lorenzo Solano Martinez 2020">
+
+  <!-- link rel="stylesheet" href="css/styles.css?v=1.0" -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+</head>
+
+<body>
+  <!-- script src="js/scripts.js"></script -->
+  <h1>Agile Voting System</h1>
+  <form action="/init-voting" method="POST">
+  	<label id="id-label" for="id-input">Enter your ID: </label>
+  	<input id="id-input" name="id" type="text" />
+  	<input id="vote-button" name="form-action" type="submit" value="Vote" />
+  	{% if HasErrors %}
+    	<span id="id-error-container" style="display:block; color:red">{{ InvalidIdMessage }}</span>
+	{% endif %}
+  </form>
+</body>
+</html>

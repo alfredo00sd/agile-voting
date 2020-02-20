@@ -1,9 +1,9 @@
 package org.dominisoft.scrumdev.claro2020;
 
-import org.junit.runner.RunWith;
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
+
+import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin = { "pretty" }, strict = true)
