@@ -8,11 +8,11 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class CandidateLoader {
   String filePath;
   private List<Candidate> candidates;
+  private List<Candidate> backupCandidates;
 
   /**
    * This method creates a candidate loader.
@@ -28,15 +28,24 @@ public class CandidateLoader {
     this.filePath = filePath;
     readCandidates();
   }
-  
+
   public int getSize() {
     return this.candidates.size();
+  }
+
+  public void trick() {
+    this.backupCandidates = candidates;
+    this.candidates.clear();
+  }
+
+  public void backTrick() {
+    this.candidates = this.backupCandidates;
+    this.backupCandidates.clear();
   }
 
   public List<Candidate> getCandidates() {
     return this.candidates;
   }
-  
 
   private void readCandidates() {
     try {
@@ -57,7 +66,7 @@ public class CandidateLoader {
     } catch (IOException ioe) {
       ioe.printStackTrace();
     }
-   
+
   }
 
 }

@@ -5,11 +5,17 @@ public class Cedula {
   private String cedula;
   private boolean hasVote;
 
-
+  /** Cedula.
+   * 
+   */
   public Cedula() {
 
   }
 
+  /** Cedula.
+   * 
+   * @param cedula cedula
+   */
   public Cedula(String cedula) {
     this.cedula = cedula;
   }
@@ -18,12 +24,13 @@ public class Cedula {
     return cedula.length() == 11;
   }
 
-  public boolean validateHasVote(){
+  public boolean validateHasVote() {
     return hasVote;
   }
 
   /**
    * Validates the gov id.
+   * 
    * @return boolean
    */
   public boolean validateCedula() {
