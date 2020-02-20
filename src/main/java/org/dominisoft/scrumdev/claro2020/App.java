@@ -78,8 +78,16 @@ public final class App {
     app.get("/voting.html", ctx -> {
       Map<String, Object> model = new HashMap<String, Object>();
       CandidateLoader loader = new CandidateLoader("candidates.csv");
+
       model.put("candidates", loader.getCandidates());
-      ctx.render("voting.pebble");
+      
+      if (loader.getSize() == 0) {
+        model.put("msgCust", "No hay candidatos.");
+        model.put("hasNoCandidates", true);
+      } 
+      
+      ctx.render("voting.pebble",model);
+     
     });
     
     app.get("/index.html", ctx -> {

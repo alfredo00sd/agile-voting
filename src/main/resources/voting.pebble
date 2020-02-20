@@ -18,16 +18,30 @@
 
 <body>
   <!-- script src="js/scripts.js"></script -->
-  <h1>Select Candidate</h1>
+  
+   {% if hasNoCandidates %}
+    	<span id="id-error-container" style="display:block; color:red">{{ msgCust }}</span>
+	{% else %}
+	
+	
+	<h1>Select Candidate</h1>
   <form action="/vote" method="POST">
   
-  <input type="radio" id="other" name="candidate" value="Gonzalo Castillo">
-  <label for="other">Gonzalo Castillo</label>
+  {% for c in candidates %}
+  	<input type="radio" id="other" name="candidate" value="{{ c.getName() }}">
+  	<label for="other">{{ c.getName() }}</label>
+  	<br>
+	{% endfor %}
+  
 
   <br>  <br> 
 	
  	<input id="vote-button" name="form-action" type="submit" value="Vote"/>
   </form>
+	
+	{% endif %}
+	
+  
 
   <script type='document/javascript' >
 </body>

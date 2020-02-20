@@ -19,6 +19,7 @@
 <body>
   <!-- script src="js/scripts.js"></script -->
   <h1>Agile Voting System</h1>
+ 
   <form action="/init-voting" method="POST">
   	<label id="id-label" for="id-input">Enter your ID: </label>
   	<input id="id-input" name="id" type="text" />
