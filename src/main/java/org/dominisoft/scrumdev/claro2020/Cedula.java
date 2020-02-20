@@ -3,24 +3,23 @@ package org.dominisoft.scrumdev.claro2020;
 public class Cedula {
 
   private String cedula;
+  private boolean hasVote;
+
 
   public Cedula() {
+
   }
 
   public Cedula(String cedula) {
     this.cedula = cedula;
   }
 
-  public String getCedula() {
-    return cedula;
-  }
-
-  public void setCedula(String cedula) {
-    this.cedula = cedula;
-  }
-
   public boolean validateLength() {
     return cedula.length() == 11;
+  }
+
+  public boolean validateHasVote(){
+    return hasVote;
   }
 
   /**
@@ -72,4 +71,17 @@ public class Cedula {
     }
     return true;
   }
+
+  public void setHasVote(boolean hasVote) {
+    this.hasVote = hasVote;
+  }
+
+  public String getCedula() {
+    return cedula;
+  }
+
+  public void setCedula(String cedula) {
+    this.cedula = cedula;
+  }
+
 }
