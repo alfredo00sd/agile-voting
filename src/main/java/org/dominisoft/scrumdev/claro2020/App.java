@@ -85,6 +85,10 @@ public final class App {
             ctx.render("voting.pebble");
         });
 
+        app.get("/confirmation", ctx -> {
+            ctx.render("confirmation.pebble");
+        });
+
         app.get("/trick", ctx -> {
             loader.trick();
         });
