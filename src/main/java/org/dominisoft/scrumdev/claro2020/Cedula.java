@@ -5,14 +5,16 @@ public class Cedula {
   private String cedula;
   private boolean hasVote;
 
-  /** Cedula.
+  /**
+   * Cedula.
    * 
    */
   public Cedula() {
 
   }
 
-  /** Cedula.
+  /**
+   * Cedula.
    * 
    * @param cedula cedula
    */
@@ -93,9 +95,6 @@ public class Cedula {
 
   @Override
   public String toString() {
-    return "Cedula{" +
-            "cedula='" + cedula + '\'' +
-            ", hasVote=" + hasVote +
-            '}';
+    return "Cedula{" + "cedula='" + cedula + '\'' + ", hasVote=" + hasVote + '}';
   }
 }

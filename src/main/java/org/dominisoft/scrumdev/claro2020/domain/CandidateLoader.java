@@ -13,7 +13,6 @@ public class CandidateLoader {
   String filePath;
   private List<Candidate> candidates;
 
-
   /**
    * This method creates a candidate loader.
    * 
