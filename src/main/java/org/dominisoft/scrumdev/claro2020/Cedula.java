@@ -91,4 +91,11 @@ public class Cedula {
     this.cedula = cedula;
   }
 
+  @Override
+  public String toString() {
+    return "Cedula{" +
+            "cedula='" + cedula + '\'' +
+            ", hasVote=" + hasVote +
+            '}';
+  }
 }

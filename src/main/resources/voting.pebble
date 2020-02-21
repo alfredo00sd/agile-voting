@@ -56,7 +56,9 @@
 	
 	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <form action="/vote_confirm" method="POST">
+    <form action="/voting-registry" method="POST">
+    <input hidden id="candidateHidden" name="candidate" value="" />
+    <input hidden id="cedula" name="cedula" value="{{ cedula }}" />
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
@@ -86,10 +88,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   
 <script>
-	$('#myModal').on('shown.bs.modal', function () {
-	  $('#algo').trigger('focus');
+
+	$(document).ready(function() {
+	  $('#myModal').on('shown.bs.modal', function () {
+		  $('#algo').trigger('focus');
+		});
 	});
-	
 	
 	function firstSelect() {
 	
@@ -101,6 +105,8 @@
 	function getActiveCandidate() {
 		let candidateName =  $("input[name=candidate]:checked").val();
 		document.getElementById("cand").innerHTML = candidateName;
+		document.getElementById("candidateHidden").value = candidateName;
+		document.getElementById("cedula").innerHTML = candidateName;
 		document.getElementById("algo").focus();
 	}
 </script>
