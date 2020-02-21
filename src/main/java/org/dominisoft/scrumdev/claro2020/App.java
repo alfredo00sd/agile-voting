@@ -105,7 +105,6 @@ public final class App {
                 model.put("msgCust", "No hay candidatos.");
                 model.put("hasNoCandidates", true);
             }
-
             ctx.render("voting.pebble", model);
 
         });
@@ -121,6 +120,9 @@ public final class App {
                     candidatosVotados.add(new VoteRegister(ced, x, new Date().toString()));
                 }
             });
+            Map<String, Object> model = new HashMap<String, Object>();
+            model.put("candidate", candidato);
+            ctx.render("confirmation.pebble");
         });
 
         app.post("/init-voting", ctx -> {

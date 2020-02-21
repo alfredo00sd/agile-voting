@@ -2,29 +2,29 @@
 
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <title>Agile Voting</title>
-  <meta name="description" content="Agile Voting System"/>
-  <meta name="author" content="Lorenzo Solano Martinez 2020"/>
+    <meta charset="utf-8"/>
+    <title>Agile Voting</title>
+    <meta name="description" content="Agile Voting System"/>
+    <meta name="author" content="Lorenzo Solano Martinez 2020"/>
 
-  <!-- link rel="stylesheet" href="css/styles.css?v=1.0" -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
-  <link rel="manifest" href="/site.webmanifest"/>
+    <!-- link rel="stylesheet" href="css/styles.css?v=1.0" -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+    <link rel="manifest" href="/site.webmanifest"/>
 
 </head>
 
 <body>
-  <h1>Agile Voting System</h1>
+<h1>Agile Voting System</h1>
 
-  <br/>
-  <hr/>
-  <br/>
-  <h2 style="color:green">Su voto ha sido recibido.</h2>
-  <br/>
-  <hr/>
-  <h3><a href="/index.html" class="btn btn-dark ">Terminar</a></h3>
+<br/>
+<hr/>
+<br/>
+<h2 style="color:green">Su voto por {{ candidate }} ha sido recibido.</h2>
+<br/>
+<hr/>
+<h3><a href="/index.html" class="btn btn-dark ">Terminar</a></h3>
 
 </body>
 </html>
