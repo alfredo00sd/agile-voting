@@ -12,7 +12,7 @@ import java.util.List;
 public class CandidateLoader {
   String filePath;
   private List<Candidate> candidates;
-  private List<Candidate> backupCandidates;
+
 
   /**
    * This method creates a candidate loader.
@@ -34,13 +34,11 @@ public class CandidateLoader {
   }
 
   public void trick() {
-    this.backupCandidates = candidates;
     this.candidates.clear();
   }
 
   public void backTrick() {
-    this.candidates = this.backupCandidates;
-    this.backupCandidates.clear();
+    readCandidates();
   }
 
   public List<Candidate> getCandidates() {

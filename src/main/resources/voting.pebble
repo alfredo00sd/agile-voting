@@ -29,7 +29,9 @@
   
   {% for c in candidates %}
   	<input type="radio" id="other" name="candidate" value="{{ c.getName() }}">
-  	<label for="other">{{ c.getName() }}</label>
+  	<b><label for="other">{{ c.getName() }}</label></b>&nbsp;
+  	<i>"<label for="other">{{c.getNickName() }}</label>"</i>&nbsp;
+  	<label for="other">{{c.getPartic() }}</label>
   	<br>
 	{% endfor %}
   
