@@ -121,7 +121,7 @@ public final class App {
             });
             Map<String, Object> model = new HashMap<String, Object>();
             model.put("candidate", candidato);
-            ctx.render("confirmation.pebble");
+            ctx.render("confirmation.pebble", model);
         });
 
         app.post("/init-voting", ctx -> {
