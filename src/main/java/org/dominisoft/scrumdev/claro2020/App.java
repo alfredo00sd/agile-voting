@@ -20,8 +20,8 @@ public final class App {
     public static final int DEFAULT_PORT = 7000;
 
     private static Javalin app;
+    private static String currentCedula;
     private static CandidateLoader loader;
-    //    public static VoteController voteController = new VoteController();
     public static List<VoteRegister> candidatosVotados = new ArrayList<>();
 
     /**
@@ -85,10 +85,6 @@ public final class App {
             ctx.render("voting.pebble");
         });
 
-        app.get("/confirmation", ctx -> {
-            ctx.render("confirmation.pebble");
-        });
-
         app.get("/trick", ctx -> {
             loader.trick();
         });
@@ -100,21 +96,24 @@ public final class App {
         app.get("/voting.html", ctx -> {
             Map<String, Object> model = new HashMap<String, Object>();
             model.put("candidates", loader.getCandidates());
+            model.put("cedula", currentCedula);
 
             if (loader.getSize() == 0) {
                 model.put("msgCust", "No hay candidatos.");
                 model.put("hasNoCandidates", true);
             }
+
             ctx.render("voting.pebble", model);
 
         });
 
         app.post("/voting-registry", ctx -> {
-                    ctx.contentType("text/html; charset=UTF-8");
+            ctx.contentType("text/html; charset=UTF-8");
             final String candidato = ctx.req.getParameter("candidate");
             final String cedula = ctx.req.getParameter("cedula");
             Cedula ced = new Cedula();
             ced.setCedula(cedula);
+            ced.setHasVote(true);
             loader.getCandidates().forEach(x -> {
                 if (x.getName().equals(candidato)){
                     candidatosVotados.add(new VoteRegister(ced, x, new Date().toString()));
@@ -137,6 +136,7 @@ public final class App {
                 model.put("HasErrors", true);
                 model.put("InvalidIdMessage", "Este individio ya ha votado!!");
                 ctx.render("index.pebble", model);
+                currentCedula = cedula.getCedula();
                 ctx.redirect("/voting.html");
             } else {
 
